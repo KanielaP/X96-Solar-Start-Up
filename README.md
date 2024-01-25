@@ -25,7 +25,7 @@ Goals of this repository:
 2. Mainstream automated solar panel systems
 3. Eventually spread usage outside of Hawaii
 
-This Solar Start Up is based on the baseline from [rl-zoo]([https://github.com/araffin/rl-baselines-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html)).
+This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html).
 
 ## Documentation
 
