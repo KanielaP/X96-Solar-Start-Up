@@ -27,10 +27,11 @@ Goals of this repository:
 
 This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html).
 
-## Documentation
+<!--## Documentation
 
 Documentation is available online: [https://rl-baselines3-zoo.readthedocs.io/](https://rl-baselines3-zoo.readthedocs.io)
-
+-->
+<!--
 ## Installation
 
 ### Minimal installation
