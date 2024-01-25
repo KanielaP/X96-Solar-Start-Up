@@ -2,30 +2,30 @@
 ![CI](https://github.com/DLR-RM/rl-baselines3-zoo/workflows/CI/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/rl-baselines3-zoo/badge/?version=master)](https://rl-baselines3-zoo.readthedocs.io/en/master/?badge=master)
 [![coverage report](https://gitlab.com/araffin/rl-baselines3-zoo/badges/master/coverage.svg)](https://gitlab.com/araffin/rl-baselines3-zoo/-/commits/master) [![codestyle](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+<!-- ignore the above for now -->
 
 
 
-# RL Baselines3 Zoo: A Training Framework for Stable Baselines3 Reinforcement Learning Agents
+# Solar Start Up: Reinforcement Learning
 
-<img src="images/car.jpg" align="right" width="40%"/>
+<img src="images/photovoltaic-2138992_1280.jpg" align="right" width="40%"/>
 
-RL Baselines3 Zoo is a training framework for Reinforcement Learning (RL), using [Stable Baselines3](https://github.com/DLR-RM/stable-baselines3).
+Solar Startup is a reinforcement learning (RL) repository for automated Solar Panel controls
 
-It provides scripts for training, evaluating agents, tuning hyperparameters, plotting results and recording videos.
+It provides scripts for training and evaluating solar agent.
 
-In addition, it includes a collection of tuned hyperparameters for common environments and RL algorithms, and agents trained with those settings.
+In addition, it includes a collection of parameters and mass data collection of weather and solar panels in Hawaii.
 
 
 We are **looking for contributors** to complete the collection!
 
 Goals of this repository:
 
-1. Provide a simple interface to train and enjoy RL agents
-2. Benchmark the different Reinforcement Learning algorithms
-3. Provide tuned hyperparameters for each environment and RL algorithm
-4. Have fun with the trained agents!
+1. Provide a storage base for Reinforcement Learning Algorithms
+2. Mainstream automated solar panel systems
+3. Eventually spread usage outside of Hawaii
 
-This is the SB3 version of the original SB2 [rl-zoo](https://github.com/araffin/rl-baselines-zoo).
+This Solar Start Up is based on the baseline from [rl-zoo]([https://github.com/araffin/rl-baselines-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html)).
 
 ## Documentation
 
