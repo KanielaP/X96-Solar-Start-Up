@@ -34,6 +34,7 @@ This agent takes information from basic environment and based off the battery le
 |---------------|--------------|-------------|------------------|
 | Charge (0)    |  Load>Solar  |  Load-Solar | Capacity = 0     |
 | DisCharge (1) | Solar>Load   |  Solar-Load | Capacity = MAX   |
+| Charge (2)    | Solar=Load   |   0         |  N/A             |
 
 ## Results
 
