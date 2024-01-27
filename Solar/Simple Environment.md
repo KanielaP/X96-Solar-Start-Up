@@ -29,8 +29,8 @@ The action is a (enter human interaction components and what it uses to store va
 | Temperature| RNG | 
 
 NOTE: This is based off of code, update when code line is available
-All random value observations are uniform.
-Battery Projection = Previous run instance (Battery + Solar - Load), otherwise 0. 
+<br> All random value observations are uniform.  
+<br> Battery Projection = Previous run instance (Battery + Solar - Load), otherwise 0.   
 
 ## Starting State
 
