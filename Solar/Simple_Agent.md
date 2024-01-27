@@ -30,11 +30,11 @@ This agent takes information from basic environment and based off the battery le
 -  Capacity(kw): Max Capacty of Battery
 
 
-|    Action     |   Parameter  |  Severity   |  Special Case    |  
-|---------------|--------------|-------------|------------------|
-| Charge (0)    |  Load>Solar  |  Load-Solar | Capacity = 0     |
-| DisCharge (1) | Solar>Load   |  Solar-Load | Capacity = MAX   |
-| Charge (2)    | Solar=Load   |   0         |  N/A             |
+|    Action     |   Parameter  |  Severity   |  Special Case     |  Special Value  |
+|---------------|--------------|-------------|-------------------|-----------------|
+| Charge (0)    |  Load>Solar  |  Load-Solar | Battery = 0       | TBD |
+| DisCharge (1) | Solar>Load   |  Solar-Load | Battery = Capacity| TBD |
+| Charge (2)    | Solar=Load   |   0         |  N/A              |
 
 ## Results
 
