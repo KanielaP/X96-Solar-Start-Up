@@ -6,7 +6,7 @@ This is the basic environment that will be the baseline to train the agent.
 
 ## Description
 
-This environment randomly generates battery level, solar charge, temperature and load consumption that is sent to the agent to process. This process is expected every hour after the agent's action. 
+This environment randomly generates solar charge, temperature and load consumption that is sent to the agent to process. The initial battery level is 0kw, but on reoccuring runs it will take the projected battery level value. This process is expected every hour after the agent's action. 
 
 ## Action Space
 
@@ -25,11 +25,12 @@ The action is a (enter human interaction components and what it uses to store va
 | Load       | RNG |
 | Solar      | RNG | 
 | Capacity   | RNG | 
-| Battery    | RNG | 
+| Battery    | Battery Projection | 
 | Temperature| RNG | 
 
 NOTE: This is based off of code, update when code line is available
-All observations are assigned a uniform random value. 
+All random value observations are uniform.
+Battery Projection = Previous run instance (Battery + Solar - Load), otherwise 0. 
 
 ## Starting State
 
