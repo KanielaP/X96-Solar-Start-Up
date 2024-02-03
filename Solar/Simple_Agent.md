@@ -49,7 +49,12 @@ This agent takes information from basic environment and based off the battery le
 
 ## How to Replicate Results?
 
+Clone the [rl-zoo repo](https://github.com/DLR-RM/rl-baselines3-zoo):
 
+```
+  git clone https://github.com/DLR-RM/rl-baselines3-zoo
+  cd rl-baselines3-zoo/
+```
 
 ## Parameters
 
