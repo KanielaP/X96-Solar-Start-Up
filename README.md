@@ -29,8 +29,14 @@ This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3
 
 ## Documentation
 
-Documentation for agent and environment is available : [agent](insertlinkhere) | [environment](insertlinkhere)
+Documentation for agent and environment is available : [agent](https://github.com/KanielaP/X96-Solar-Start-Up/blob/main/Solar/Simple_Agent.md) | [environment](https://github.com/KanielaP/X96-Solar-Start-Up/blob/main/Solar/Simple%20Environment.md) 
 
+## Install
+
+## Uninstall
+
+## Dependencies
+-  rlzoo
 <!--
 ## Installation
 
