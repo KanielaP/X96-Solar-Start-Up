@@ -37,6 +37,7 @@ Documentation for agent and environment is available : [agent](https://github.co
 
 ## Dependencies
 -  rlzoo
+-  Python 
 <!--
 ## Installation
 
