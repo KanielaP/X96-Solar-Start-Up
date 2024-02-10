@@ -7,6 +7,8 @@ This is the basic environment that will be the baseline to train the agent.
 ## Description
 
 This environment randomly generates solar charge, temperature and load consumption that is sent to the agent to process. The initial battery level is randomly generated, but on reoccuring runs it will take the projected battery level value. The Capacity of the battery is taken from the global parameter which is set to 10kw/h.This process is expected every hour after the agent's action. 
+<br> 
+<br> sF_Expert was not able to fully understand. No set of data type to understand and have to hunt through imports
 
 ## Action Space
 
