@@ -1,4 +1,4 @@
-# Simple Agent
+# Simple Environment
 
 <img src="images/Basic Agent_Environment.png" align="middle" width="60%"/>
 
@@ -20,12 +20,14 @@ The action is initializing the environment. The human interaction allows subsequ
 -  Battery(kw/h): Current Battery Charge
 -  Temperature(°C): Current Temperature of Weather
 -  Reward(kw/h): Total Amount of kw/h from Current Session
+-  Purchase Price ($/kw/h): Base Rates to Buy Electrcity
+-  Selling Price ($/kw/h): Base Rates to Sell Electricity 
 
 | Parameters | Values             | 
 |------------|--------------------|
 | Load       | RNG(0,8)           |
 | Solar      | RNG(0,4)           | 
-| Capacity   | 10                 | 
+| Capacity   | 27                 | 
 | Battery    | Battery Projection | 
 | Temperature| RNG(27,29)         | 
 | Reward     | Reward Projection  |
@@ -33,7 +35,12 @@ The action is initializing the environment. The human interaction allows subsequ
 <br> RNG: Random Number Generator where first number is lowest possible value and second number is max possible value. 
 <br> All random value observations are uniform.  
 <br> Battery Projection = Previous Battery Value + Agent's Input Value.
+<br> Reward Projection = Override Policy
+
+<!--
 <br> Reward Projection = Previous Reward Value + Agent's Input Value. 
+--> 
+
 
 ## Starting State
 
@@ -48,12 +55,23 @@ The action is initializing the environment. The human interaction allows subsequ
 
 ## Override Policy
 
--  Action(kw/h): Charge Value given by Agent 
 
+-  Action(kw/h): Charge Value given by Agent
+-  Purchase Price ($/kw/h): Base Rates to Buy Electrcity
+-  Selling Price ($/kw/h): Base Rates to Sell Electricity 
+
+| Event                            | Reward                                                |
+|----------------------------------|-------------------------------------------------------|
+| Battery + action < 0             | Reward = Purchasing Price * (Battery - Load + Solar)  |
+| Battery + action > 0             | Reward = Selling Rate * (Battery - Load + Solar)      | 
+
+<!--
 | Event                            | Values             | Reward                                                |
 |----------------------------------|--------------------|-------------------------------------------------------|
 | Battery + action < 0             | Battery = 0        | Reward = Previous Reward + Battery + Action           |
 | Battery + action > Capacity      | Battery = Capacity | Reward = Previous Reward +Battery + Action - Capacity | 
+-->
+
 
 <br> Difference in the scenario will go to grid but will affect the reward.
 
