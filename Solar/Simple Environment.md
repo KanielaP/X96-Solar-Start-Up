@@ -8,7 +8,10 @@ This is the basic environment that will be the baseline to train the agent.
 
 This environment randomly generates solar charge, temperature and load consumption that is sent to the agent to process. The initial battery level is randomly generated, but on reoccuring runs it will take the projected battery level value. The Capacity of the battery is taken from the global parameter which is set to 10kw/h.This process is expected every hour after the agent's action. 
 <br> 
+
+<!--
 <br> sF_Expert was not able to fully understand. No set of data type to understand and have to hunt through imports
+-->
 
 ## Action Space
 
@@ -30,16 +33,15 @@ The action is initializing the environment. The human interaction allows subsequ
 | Load       | RNG(0,8)           |
 | Solar      | RNG(0,4)           | 
 | Capacity   | 27                 | 
-| Battery    | Battery Projection | 
+| Battery    | Battery Dynamix    | 
 | Temperature| RNG(27,29)         | 
-| Reward     | Reward Projection  |
+| Reward     | Reward             |
 
 <br> RNG: Random Number Generator where first number is lowest possible value and second number is max possible value. 
 <br> All random value observations are uniform.  
-<br> Battery Projection = Previous Battery Value + Agent's Input Value.
-<br> Reward Projection = Override Policy
 
 <!--
+<br> Battery Projection = Previous Battery Value + Agent's Input Value.
 <br> Reward Projection = Previous Reward Value + Agent's Input Value. 
 --> 
 
@@ -55,17 +57,27 @@ The action is initializing the environment. The human interaction allows subsequ
 | Temperature| RNG(27,29)     |   
 | Reward     | 0              |  
 
-## Override Policy
+## Battery Dynamix
+
+Given an Action, the Battery follows the following transition dynamics:
+
+*Battery Level<sub>t+1</sub>= Battery Level<sub>t</sub> + Action<sub>t+1</sub>*
+<br>*If Battery level<sub>t+1</sub> > 27, then Battery level<sub>t+1</sub> = 27*
+<br>*If Battery level<sub>t+1</sub> < 0, thhen Battery level<sub>t+1</sub> = 0*
+
+Where the action is clipped to the range [-10,10] and the battery's level is clipped at the range [0,27]. t represents the state. 
+
+## Reward
 
 
 -  Action(kw/h): Charge Value given by Agent
 -  Purchase Price ($/kw/h): Base Rates to Buy Electrcity
 -  Selling Price ($/kw/h): Base Rates to Sell Electricity 
 
-| Event                            | Reward                                                |
-|----------------------------------|-------------------------------------------------------|
-| Battery + action < 0             | Reward = Purchasing Price * (Battery - Load + Solar)  |
-| Battery + action > 0             | Reward = Selling Rate * (Battery - Load + Solar)      | 
+| Event                                   | Reward                                                |
+|-----------------------------------------|-------------------------------------------------------|
+|  -Load + Solar + Action < 0             | Reward = -Purchasing Price * (- Load + Solar+ Action) |
+|  -Load + Solar + Action > 0             | Reward = Selling Rate * (- Load + Solar + Action)     | 
 
 <!--
 | Event                            | Values             | Reward                                                |
@@ -79,8 +91,8 @@ The action is initializing the environment. The human interaction allows subsequ
 
 ## Environment End
 
-Human input to rerun the code to generate new values to train the agent. There is no actual end other than quitting the program. 
+Human input to rerun the code to generate new values to train the agent. There is no actual end other than quitting the program or hitting step run limit. 
 
-## Arguements 
+## Arguments 
 
 
