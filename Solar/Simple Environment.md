@@ -57,12 +57,12 @@ The action is initializing the environment. The human interaction allows subsequ
 | Temperature| RNG(27,29)     |   
 | Reward     | 0              |  
 
-## Battery Dynamix
+## Battery Dynamics
 
 Given an Action, the Battery follows the following transition dynamics:
 
-*Battery Level<sub>t+1</sub>= Battery Level<sub>t</sub> + Action<sub>t+1</sub>*
-<br>*If Battery level<sub>t+1</sub> > 27, then Battery level<sub>t+1</sub> = 27*
+*Battery Level<sub>t+1</sub>= Battery Level<sub>t</sub> + Action<sub>t</sub>*
+<br>*If Battery level<sub>t+1</sub> > Capacity, then Battery level<sub>t+1</sub> = Capacity*
 <br>*If Battery level<sub>t+1</sub> < 0, thhen Battery level<sub>t+1</sub> = 0*
 
 Where the action is clipped to the range [-10,10] and the battery's level is clipped at the range [0,27]. t represents the state. 
