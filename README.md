@@ -32,6 +32,13 @@ This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3
 Documentation for agent and environment is available : [agent](https://github.com/KanielaP/X96-Solar-Start-Up/blob/main/Solar/Simple_Agent.md) | [environment](https://github.com/KanielaP/X96-Solar-Start-Up/blob/main/Solar/Simple%20Environment.md) 
 
 ## Install
+'''
+pip install rl-zoo3
+'''
+
+
+
+Note: you can do `python -m rl_zoo3.train` from any folder and you have access to `rl_zoo3` command line interface, for instance, `rl_zoo3 train` is equivalent to `python train.py`
 
 ## Uninstall
 
@@ -39,6 +46,7 @@ Documentation for agent and environment is available : [agent](https://github.co
 -  rlzoo
 -  Python
 -  GitHub
+-  reliable (Plotting Results)
 <!--
 ## Installation
 
