@@ -74,3 +74,4 @@ Example command:
 
   !python -m rl_zoo3.train --algo a2c --env MyCustomEnv-v0 --n-timesteps 100000
 
+This setup allows you to integrate custom environments into RL Baselines3 Zoo, enabling experimentation with different RL algorithms provided by the framework. Remember to ensure that your custom environment is accessible (e.g., by placing it in the correct directory or adjusting your Python path) when running experiments in environments like Google Colab.
