@@ -32,9 +32,26 @@ This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3
 Documentation for agent and environment is available : [agent](https://github.com/KanielaP/X96-Solar-Start-Up/blob/main/Solar/Simple_Agent.md) | [environment](https://github.com/KanielaP/X96-Solar-Start-Up/blob/main/Solar/Simple%20Environment.md) 
 
 ## Install
-'''
+Minimum Installation
+```sh
 pip install rl-zoo3
-'''
+```
+Full installation (with extra envs and test dependencies)
+```sh
+apt-get install swig cmake ffmpeg
+pip install -r requirements.txt
+pip install -e .[plots,tests]
+```
+Troubleshooting
+```sh
+pip install huggingface-sb3
+
+pip install sb3-contrib
+
+pip install optuna
+```
+
+
 
 
 
@@ -46,8 +63,10 @@ Note: you can do `python -m rl_zoo3.train` from any folder and you have access t
 -  rlzoo
 -  Python
 -  GitHub
--  reliable (Plotting Results)
--  
+-  rliable ([Plotting Results](https://github.com/google-research/rliable))
+-  Huggingface-sb3
+-  sb3-contrib
+-  optuna
 <!--
 ## Installation
 
