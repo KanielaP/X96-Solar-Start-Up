@@ -58,6 +58,7 @@ pip install optuna
 
 
 Note: you can do `python -m rl_zoo3.train` from any folder and you have access to `rl_zoo3` command line interface, for instance, `rl_zoo3 train` is equivalent to `python train.py`
+<br>Try installing dependencies directly from sources
 
 ## Uninstall
 
