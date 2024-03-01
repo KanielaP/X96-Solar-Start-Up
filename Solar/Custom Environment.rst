@@ -14,10 +14,12 @@ Registering Your Environment
 ============================
 A. Create Your Custom Environment
 Ensure your custom environment follows the OpenAI Gym interface. Including properties such as observation_space and action_space. 
-- reset()
-- step(action)
-- render()
-- close()
+
++ reset()
++ step(action)
++ render()
++ close()
+
 
 B. Modify 'import_envs.py'
 Locate the 'rl_zoo3/import_envs.py' file in the RL Baselines3 Zoo repository.
