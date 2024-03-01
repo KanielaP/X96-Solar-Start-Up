@@ -45,9 +45,11 @@ pip install -e .[plots,tests]
 Troubleshooting
 ```sh
 pip install huggingface-sb3
-
+```
+```sh
 pip install sb3-contrib
-
+```
+```sh
 pip install optuna
 ```
 
