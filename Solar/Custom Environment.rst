@@ -77,3 +77,113 @@ Example command:
   !python -m rl_zoo3.train --algo a2c --env MyCustomEnv-v0 --n-timesteps 100000
 
 This setup allows you to integrate custom environments into RL Baselines3 Zoo, enabling experimentation with different RL algorithms provided by the framework. Remember to ensure that your custom environment is accessible (e.g., by placing it in the correct directory or adjusting your Python path) when running experiments in environments like Google Colab.
+
+=======================
+Setting Up Google Colab
+=======================
+
+Most of our testing was through Google Colab which has a whole different setup to work properly and run your custom environment without needing to download or install much. Please download the repository into your google drive and follow the next steps in Google Colab. 
+
+--------------------
+Install Dependencies
+--------------------
+
+.. code-block:: python
+
+   !apt-get update && apt-get install swig cmake ffmpeg freeglut3-dev xvfb
+
+-----------------------
+Setup RL Baselines3 Zoo
+-----------------------
+
+- Mount the Google Drive to access it from the notebook 
+- Go to the directory containing RL Baselines3 Zoo 
+
+.. code-block:: python
+
+   from google.colab import drive
+   drive.mount('/content/drive')
+   
+   # Navigate to the directory
+   %cd "/content/drive/My Drive/UHM/RL Demand Response"
+
+This should be Mounted at '/content/drive'
+Directory should be at '/content/drive/My Drive/UHM/RL Demand Response'
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+Install pip Dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   %cd rl-baselines3-zoo/
+   !pip install -r requirements.txt
+   !pip install -e .[plots,tests]
+
+----------------------------
+Setup the Custom Environment
+----------------------------
+
+The procedure of setting up the custom environment is adapted from the instructions 'here<https://gymnasium.farama.org/tutorials/gymnasium_basics/environment_creation/>'.
+
+~~~~~~~~~~~~~~~~~~
+Clone gym-examples
+~~~~~~~~~~~~~~~~~~
+
+We will add our custom environments in 'gym-examples<https://github.com/Farama-Foundation/gym-examples>'. Clone and download into Google Drive. 
+
+The folder 'gym-examples' should be at the same level of 'rl-baselines3-zoo', not inside 'rl-baselines3-zoo'. In this way, we will make minimal modifications to 'rl-baselines3-zoo'.
+
+.. code-block:: python
+
+   import os
+   
+   %cd "/content/drive/My Drive/UHM/RL Demand Response"
+   
+   # Check if the directory exists
+   if not os.path.exists('gym-examples'):
+    # Directory does not exist, so clone the repository
+    !git clone https://github.com/Farama-Foundation/gym-examples
+   else:
+    # Directory exists, print a message
+    print("The directory 'gym-examples' already exists.")
+
+This code block is to check if folder is correctly installed. 
+
+The 'gym-examples' package contains one environment 'GridWorld' in 'gym_examples'.
+
+We need to add our own custom environment. Please copy and paste the folder which contains your environment in the folder 'gym_demand_response'.
+
+Make sure that the structure and files in your Google Drive are the same as the folder provided 'here<https://drive.google.com/drive/folders/12_E0PUNEwcEwghveHbzdA8hf44UtYe60>'. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add the Directory to the System Path
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   import sys
+   
+   path_to_add = '/content/drive/MyDrive/UHM/RL Demand Response/gym-examples'  # You may need to change the directory according to your own Google Drive
+   if path_to_add not in sys.path:
+       sys.path.append(path_to_add)
+   print(sys.path)
+
+-----------------------------------------------------------
+Verifying the Custom Environment is Registered in Gymnasium
+-----------------------------------------------------------
+
+Import the custom environment 'gym_demand_response' and list all the environment registered in gym.
+
+You should be able to see the custom environment alphabetically sorted in the list.
+
+.. code-block:: python
+
+   import gymnasium as gym
+   import gym_demand_response
+   
+   # Get the list of all registered environment IDs
+   env_ids = [env_spec.id for env_spec in gym.envs.registry.values()]
+   for env_id in sorted(env_ids):  # Sorting the list for easier reading
+       print(env_id)
+
