@@ -23,6 +23,7 @@ Install Dependencies
 
    !apt-get update && apt-get install swig cmake ffmpeg freeglut3-dev xvfb
 
+
 -----------------------
 Setup RL Baselines3 Zoo
 -----------------------
@@ -80,6 +81,7 @@ The folder 'gym-examples' should be at the same level of 'rl-baselines3-zoo', no
     # Directory exists, print a message
     print("The directory 'gym-examples' already exists.")
 
+
 This code block is to check if folder is correctly installed. 
 
 The 'gym-examples' package contains one environment 'GridWorld' in 'gym_examples'.
@@ -100,6 +102,7 @@ Add the Directory to the System Path
    if path_to_add not in sys.path:
        sys.path.append(path_to_add)
    print(sys.path)
+
 
 -----------------------------------------------------------
 Verifying the Custom Environment is Registered in Gymnasium
@@ -135,6 +138,8 @@ If the custom environment conforms to the rules of Gymnasium, we should be able 
 -----------------------------------------------------------
 Register the Custom Environment in RL Baselines3 Zoo
 -----------------------------------------------------------
+
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Update import_envs.py
@@ -180,4 +185,70 @@ his tells the A2C algorithm to use these hyperparameters when training under the
 An example of the modified 'a2c.yml' is `here <https://drive.google.com/file/d/12nfaBPK4FY_HEcmO-fyHsyuV0Hh-zgsm/view>`_ .
 
 Now we are ready to train the A2C algorithm in our custom environment!
+
+----------------------------------------------
+Train a RL Algorithm in the Custom Environment
+----------------------------------------------
+
+.. code-block:: python
+
+   %cd "/content/drive/My Drive/UHM/RL Demand Response/rl-baselines3-zoo/"
+   !python -m rl_zoo3.train --algo a2c --env gym_demand_response/DemandResponseSimpleNoExport-v0 --n-timesteps 100000
+
+We continue training for another 1 million steps:
+
+.. code-block:: python
+
+   !python -m rl_zoo3.train --algo a2c --env gym_demand_response/DemandResponseSimpleNoExport-v0 --n-timesteps 1000000 -i logs/a2c/gym_demand_response-DemandResponseSimpleNoExport-v0_1/gym_demand_response-DemandResponseSimpleNoExport-v0.zip
+
+
+
+----------------------------
+Illustrate the Trained Agent
+----------------------------
+
+
+~~~~~~~~~~~~~~
+Load the Model
+~~~~~~~~~~~~~~
+
+The model is saved in best_model.zip in the folder indicated at the end of the training.
+
+.. code-block:: python
+
+   from stable_baselines3 import A2C
+   
+   model_path = 'logs/a2c/gym_demand_response-DemandResponseSimpleNoExport-v0_1/best_model.zip'  # Adjust the path to where your model is saved
+   model = A2C.load(model_path)
+
+
+~~~~~~~~~~~~~~~~~~~~~
+Illustrate the Policy
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   import numpy as np
+   import matplotlib.pyplot as plt
+   
+   net_demands, actions = [], []
+   
+   num_time_steps = 1000
+   
+   for time_step in range(num_time_steps):
+       random_battery_level = np.random.uniform(0.0, 27.0)     # random battery level
+       random_temperature = np.random.uniform(25.0, 35.0)      # random temperature
+       random_demand = np.random.uniform(0.0, 4.0)             # random household demand
+       random_solar = np.random.uniform(0.0, 5.0)              # random solar production
+       hour_of_day = 0                                         # start from midnight
+   
+       action, _states = model.predict(np.array([random_battery_level, random_temperature, random_demand, random_solar, hour_of_day]), deterministic=True)
+       net_demands.append(random_demand - random_solar)  # Collect the net demand (i.e., demand - solar)
+       actions.append(action)
+   
+   plt.scatter(net_demands, actions)
+   plt.xlabel('Net Demand')
+   plt.ylabel('Action Taken')
+   plt.title('Action vs. Net Demand')
+   plt.show()
 
