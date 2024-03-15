@@ -107,8 +107,8 @@ Setup RL Baselines3 Zoo
    # Navigate to the directory
    %cd "/content/drive/My Drive/UHM/RL Demand Response"
 
-This should be Mounted at '/content/drive'
-Directory should be at '/content/drive/My Drive/UHM/RL Demand Response'
+- This should be Mounted at '/content/drive'
+- Directory should be at '/content/drive/My Drive/UHM/RL Demand Response'
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Install pip Dependencies
@@ -124,13 +124,14 @@ Install pip Dependencies
 Setup the Custom Environment
 ----------------------------
 
-The procedure of setting up the custom environment is adapted from the instructions 'here<https://gymnasium.farama.org/tutorials/gymnasium_basics/environment_creation/>'.
+The procedure of setting up the custom environment is adapted from the instructions `here <https://gymnasium.farama.org/tutorials/gymnasium_basics/environment_creation/>`_ .
+
 
 ~~~~~~~~~~~~~~~~~~
 Clone gym-examples
 ~~~~~~~~~~~~~~~~~~
 
-We will add our custom environments in 'gym-examples<https://github.com/Farama-Foundation/gym-examples>'. Clone and download into Google Drive. 
+We will add our custom environments in `gym-examples <https://github.com/Farama-Foundation/gym-examples>`_ . Clone and download into Google Drive. 
 
 The folder 'gym-examples' should be at the same level of 'rl-baselines3-zoo', not inside 'rl-baselines3-zoo'. In this way, we will make minimal modifications to 'rl-baselines3-zoo'.
 
@@ -154,7 +155,7 @@ The 'gym-examples' package contains one environment 'GridWorld' in 'gym_examples
 
 We need to add our own custom environment. Please copy and paste the folder which contains your environment in the folder 'gym_demand_response'.
 
-Make sure that the structure and files in your Google Drive are the same as the folder provided 'here<https://drive.google.com/drive/folders/12_E0PUNEwcEwghveHbzdA8hf44UtYe60>'. 
+Make sure that the structure and files in your Google Drive are the same as the folder provided `here <https://drive.google.com/drive/folders/12_E0PUNEwcEwghveHbzdA8hf44UtYe60>`_ . 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Add the Directory to the System Path
