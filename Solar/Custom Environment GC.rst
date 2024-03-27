@@ -9,6 +9,7 @@ need to add a section for it in the hyperparameters file
 using ``--conf-file`` argument). This can be done two ways Locally and Google Colab.
 
 If Code Breaks please refer full information pleaser refer to `here <https://colab.research.google.com/drive/19517p4QHRgycsIFWjEU3ufxdlhJOggj9?usp=sharing#scrollTo=w2sC22eGHTH->`_ and `here <https://colab.research.google.com/drive/1MYXZuM2l6txG5T7EHVmkTTzZJanou5y_?usp=sharing>`_ .
+
 =======================
 Setting Up Google Colab
 =======================
