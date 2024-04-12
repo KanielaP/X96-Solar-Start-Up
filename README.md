@@ -6,7 +6,7 @@
 
 
 
-# Solar Start Up: Reinforcement Learning
+# SolarMind: Harnessing Intelligence for Renewable Energy
 
 <img src="images/photovoltaic-2138992_1280.jpg" align="right" width="40%"/>
 
