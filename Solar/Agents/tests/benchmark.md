@@ -13,9 +13,6 @@ optimize future tests*
 
 |  algo  |            env_id             |mean_reward|std_reward|n_timesteps|eval_timesteps|eval_episodes|
 |--------|-------------------------------|----------:|---------:|-----------|-------------:|------------:|
-|a2c     |Acrobot-v1                     |    -83.353|    17.213|500k       |        149979|         1778|
-|a2c     |Ant-v3                         |    -44.023|    63.206|1M         |        149469|          761|
-
 |a2c     |LunarLanderContinuous-v2       |     84.225|   145.906|5M         |        149305|          256|
 |a2c     |MountainCar-v0                 |   -111.263|    24.087|1M         |        149982|         1348|
 |ars     |Acrobot-v1                     |    -82.884|    23.825|500k       |        149985|         1788|
