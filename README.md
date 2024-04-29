@@ -35,6 +35,8 @@ Documentation for simple agent and environment is available : [agent](https://gi
 
 Documentation for Custom Agent and Environemtns is available : [custom agent](https://github.com/KanielaP/X96-Start-Up/blob/main/Solar/Custom%20Agent.rst) | [custom environment local](https://github.com/KanielaP/X96-Start-Up/blob/main/Solar/Custom%20Environment%20Local.rst) | [custom environment Google Colab](https://github.com/KanielaP/X96-Start-Up/blob/main/Solar/Custom%20Environment%20GC.rst) 
 
+Documentation for Raw Data that will be used to train agents is [here](https://github.com/KanielaP/X96-Start-Up/tree/main/Solar/Data)
+
 ## Install
 
 If you would like to run our current Environments and Agents please refer to the two Google Colab links: [here](https://colab.research.google.com/drive/19517p4QHRgycsIFWjEU3ufxdlhJOggj9?usp=sharing#scrollTo=w2sC22eGHTH-) | [here](https://colab.research.google.com/drive/1MYXZuM2l6txG5T7EHVmkTTzZJanou5y_?usp=sharing) 
