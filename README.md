@@ -6,26 +6,19 @@
 
 
 
-# Solar-Home-Gym: Harnessing Intelligence for Renewable Energy
+# smart-home-gym: Benchmarks of Reinforcement Learning for Smart Home Energy Management
 
 <img src="images/photovoltaic-2138992_1280.jpg" align="right" width="40%"/>
 
-Solar Startup is a reinforcement learning (RL) repository for automated Solar Panel controls
+smart-home-gym is a public repository to advance the research on reinforcement learning (RL) algorithms for smart home energy management. It provides
+- custom environments conforming with [Gymnasium](https://gymnasium.farama.org/) API for easy testing of RL algorithms;
+- useful wrappers of RL algorithms customized to smart home energy management problems;
+- hyperparameters of state-of-the-art RL algorithms tuned under our environments for reproducibility;
+- benchmarks of state-of-the-art RL algorithms for tracking performance (similar to [StableBaselines3 benchmarks](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/benchmark.md)).
 
-It provides scripts for training and evaluating solar agent.
+[comment]: We are **looking for contributors** to complete the collection!
 
-In addition, it includes a collection of parameters and mass data collection of weather and solar panels in Hawaii.
-
-
-We are **looking for contributors** to complete the collection!
-
-Goals of this repository:
-
-1. Provide a storage base for Reinforcement Learning Algorithms
-2. Mainstream automated solar panel systems
-3. Eventually spread usage outside of Hawaii
-
-This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html).
+[comment]: This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html).
 
 ## Documentation
 
