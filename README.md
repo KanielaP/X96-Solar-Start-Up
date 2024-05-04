@@ -16,10 +16,6 @@ smart-home-gym is a public repository to advance the research on reinforcement l
 - hyperparameters of state-of-the-art RL algorithms tuned under our environments for reproducibility;
 - benchmarks of state-of-the-art RL algorithms for tracking performance (similar to [StableBaselines3 benchmarks](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/benchmark.md)).
 
-[comment]: We are **looking for contributors** to complete the collection!
-
-[comment]: This Solar Start Up is based on the baseline from [rl-zoo](https://rl-baselines3-zoo.readthedocs.io/en/master/index.html).
-
 ## Documentation
 
 General Information [here](https://github.com/KanielaP/X96-Start-Up/tree/main/Solar) 
